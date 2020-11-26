@@ -1,6 +1,6 @@
 import argparse
 import os
-import scipy.io as sio
+
 
 def main():
     parser = argparse.ArgumentParser(description="Demo of simplelayout")
@@ -29,11 +29,10 @@ def main():
     if not os.path.exists(path):
         os.makedirs(path)
     os.chdir(rf'{path}')
-    sio.savemat(f'{args.file_name}.mat')
     full_path = path + args.file_name + '.jpg'
     file = open(full_path, 'w')
     file.write()
-
+# os.mknod()
 
 def transpath(path):
     path = path.replace('/', 'os.sep')
