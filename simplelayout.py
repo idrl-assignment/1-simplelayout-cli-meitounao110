@@ -35,9 +35,7 @@ def main():
     full_path = path + args.file_name + '.jpg'
     file = open(full_path, 'w')
     file.write()
-
-
-# os.mknod()
+    os.mknod(rf'{args.file_name}.mat')
 
 def transpath(path):
     path = path.replace('/', 'os.sep')
