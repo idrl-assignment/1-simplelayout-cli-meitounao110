@@ -20,25 +20,26 @@ def main():
     args = parser.parse_args()
     # 检验是否被整除
     if args.board_grid % args.unit_grid != 0:
-        return
+        print("error on unit_grid")
+        exit()
     uplimit = (args.board_grid / args.unit_grid) ** 2
     # 检验长度是否标准
     if len(args.positions) != args.unit_n:
-        return
-    for i in range(0, len(args.positions)):
-        if 1 < args.positions[i] or args.positions[i] > uplimit:
-            return
-        else:
-            print(i)
+        print('position number error' )
+        exit()
+    else:
+        for i in range(len(args.positions)):
+            if 1 > args.positions[i] or args.positions[i] > uplimit:
+                exit()
     path = transpath(args.outdir)
     if not os.path.exists(path):
         os.makedirs(path)
-    os.chdir(rf'{path}')
+    os.chdir(f'{path}')
     full_path = path + args.file_name + '.jpg'
     file = open(full_path, 'w')
     file.write()
     path_full = path + args.file_name + '.mat'
-    os.mknod(rf'{path_full}')
+    os.mknod(f'{path_full}')
 
 
 def transpath(path):
