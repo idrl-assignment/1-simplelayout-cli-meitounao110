@@ -43,8 +43,8 @@ def main():
 
 
 def transpath(path):
-    path = path.replace('/', 'os.sep')
-    path = path.replace('\\', 'os.sep')
+    path = path.replace('/', os.sep)
+    path = path.replace('\\', os.sep)
     return path
 
 
