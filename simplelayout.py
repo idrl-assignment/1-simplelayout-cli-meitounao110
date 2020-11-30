@@ -37,7 +37,7 @@ def main():
     full_path = path + os.sep + args.file_name + '.jpg'
     file = open(full_path, 'w')
     file.close()
-    path_full = path + args.file_name + '.mat'
+    path_full = path + os.sep + args.file_name + '.mat'
     file = open(path_full, 'w')
     file.close()
 
