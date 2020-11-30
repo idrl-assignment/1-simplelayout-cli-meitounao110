@@ -25,7 +25,7 @@ def main():
     uplimit = (args.board_grid / args.unit_grid) ** 2
     # 检验长度是否标准
     if len(args.positions) != args.unit_n:
-        print('position number error' )
+        print('position number error')
         exit()
     else:
         for i in range(len(args.positions)):
@@ -34,12 +34,12 @@ def main():
     path = transpath(args.outdir)
     if not os.path.exists(path):
         os.makedirs(path)
-    os.chdir(f'{path}')
-    full_path = path + args.file_name + '.jpg'
+    full_path = path + os.sep + args.file_name + '.jpg'
     file = open(full_path, 'w')
-    file.write()
+    file.close()
     path_full = path + args.file_name + '.mat'
-    os.mknod(f'{path_full}')
+    file = open(path_full, 'w')
+    file.close()
 
 
 def transpath(path):
